@@ -6,24 +6,24 @@ const paragraphContainer = document.querySelector(".paragraphContainer");
 
 let userInputData = "";
 let para = [];
+
 userInput.addEventListener("input", (e) => {
   userInputData = e.target.value;
   console.log(userInputData);
 });
 
-const onSubmitHandler = async (userInputData) => {
-  let result = await fetch(
-    `https://baconipsum.com/api/?type=all-meat&sentences=${userInputData}&start-with-lorem=1`
-  )
-    .then((response) => response.json())
-    .then((data) => {
-      para.push(data);
-    });
+const onSubmitHandler = async () => {
+  try {
+    const response = await fetch(
+      `https://baconipsum.com/api/?type=all-meat&sentences=${userInputData}&start-with-lorem=1`
+    );
+    const data = await response.json();
+    para.push(data);
+    console.log(para);
 
-  console.log(para);
-
-  for (let i = 0; i < para.length; i++) {
-    paragraphContainer.innerHTML = para[i] + "<br>";
+    paragraphContainer.innerHTML = para.map((p) => `${p}<br>`).join("");
+  } catch (error) {
+    console.error(error);
   }
 };
 
