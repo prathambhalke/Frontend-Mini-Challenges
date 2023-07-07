@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    background-color: aqua;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.paragraphContainer {
+    border: 2px solid red;
+    height: 100%;
+    width: 50vw;
+    overflow-y: visible;
+}
+
+button {
+    margin: 12px 0px;
+    padding: 12px;
+    background-color: yellow;
+}
+
+button:hover {
+    background-color: bisque;
+}
+
+input {
+    height: 3em;
+    text-align: center;
+    font-size: large;
+}
+
+input:hover{
+    background-color: blanchedalmond;
+}
