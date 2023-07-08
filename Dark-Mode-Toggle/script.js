@@ -1,4 +1,6 @@
-const checkbox = document.getElementById("checkbox");
-checkbox.addEventListener("change", () => {
+const checkbox = document.querySelector("#checkbox");
+
+const toggleFunction = () => {
   document.body.classList.toggle("dark");
-});
+};
+checkbox.addEventListener("change", toggleFunction);
