@@ -23,10 +23,15 @@ h2 {
     color: #ff8800;
 }
 
+p {
+    text-align: center;
+    color: gray;
+}
+
 .fileInput {
     width: 95%;
     padding: 10px;
-    margin: 24px 0px;
+    margin-top: 18px;
     border: 1px solid #ff8800;
     border-radius: 5px;
 }
@@ -40,6 +45,8 @@ h2 {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin-top: 24px;
+
 }
 
 .downloadBtn:hover {
