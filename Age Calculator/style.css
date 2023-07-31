@@ -57,8 +57,25 @@ button:hover {
     background-color: #ffd700;
 }
 
+#clearButton:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
 #result {
     margin-top: 20px;
-    color: rgb(0, 102, 255);
+    padding: 20px;
+    background-color: #FFDAB9;
+    border-radius: 5px;
+}
+
+#result h5 {
+    color: #FFA500;
     font-size: 18px;
+    margin-bottom: 10px;
+}
+
+#result span {
+    font-weight: bold;
+    color: #1a1a1a;
 }
