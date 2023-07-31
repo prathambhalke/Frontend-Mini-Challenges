@@ -1,31 +1,34 @@
 const form = document.getElementById("ageCalculatorForm");
 const resultDiv = document.getElementById("result");
 const clearButton = document.getElementById("clearButton");
+const birthDateInput = document.getElementById("birthdate");
+const yearsOld = document.getElementById("years");
+const monthsOld = document.getElementById("months");
+const daysOld = document.getElementById("days");
+const hoursOld = document.getElementById("hours");
+const minutesOld = document.getElementById("minutes");
+const secondsOld = document.getElementById("seconds");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
-  const birthdate = new Date(document.getElementById("birthdate").value);
-  const now = new Date();
-  const diff = now - birthdate;
+  const birthdate = new Date(birthDateInput.value);
+  const ageInMilliseconds = Date.now() - birthdate.getTime();
+  const ageDate = new Date(ageInMilliseconds);
 
-  const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365.25));
-  const months = Math.floor(
-    (diff % (1000 * 60 * 60 * 24 * 365.25)) / (1000 * 60 * 60 * 24 * 30.44)
-  );
-  const days = Math.floor(
-    (diff % (1000 * 60 * 60 * 24 * 365.25)) / (1000 * 60 * 60 * 24)
-  );
-  const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+  const years = ageDate.getUTCFullYear() - 1970;
+  const months = ageDate.getUTCMonth();
+  const days = ageDate.getUTCDate() - 1; // Subtract 1 to account for the day of birth
+  const hours = ageDate.getUTCHours();
+  const minutes = ageDate.getUTCMinutes();
+  const seconds = ageDate.getUTCSeconds();
 
-  document.getElementById("years").textContent = years;
-  document.getElementById("months").textContent = months;
-  document.getElementById("days").textContent = days;
-  document.getElementById("hours").textContent = hours;
-  document.getElementById("minutes").textContent = minutes;
-  document.getElementById("seconds").textContent = seconds;
-
+  yearsOld.innerHTML = years;
+  monthsOld.innerHTML = months;
+  daysOld.innerHTML = days;
+  hoursOld.innerHTML = hours;
+  minutesOld.innerHTML = minutes;
+  secondsOld.innerHTML = seconds;
+  birthDateInput.value = "";
   clearButton.disabled = false;
 });
 
@@ -39,4 +42,3 @@ clearButton.addEventListener("click", () => {
   document.getElementById("seconds").textContent = "";
   clearButton.disabled = true;
 });
-
