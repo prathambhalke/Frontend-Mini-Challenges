@@ -1,0 +1,30 @@
+.notes-container{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .notes-box {
+    width: 95%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .notes-box-income, .notes-box-expense{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .notes-heading {
+    width: 100%;
+    height: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: antiquewhite;
+  }

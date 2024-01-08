@@ -1,0 +1,107 @@
+.expenseView-component {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.expenseView {
+    width: 50%;
+    height: 70%;
+    padding: 10px 30px;
+}
+
+.income,
+.expense {
+    width: 100%;
+    height: 115px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #e2ebf3;
+    margin: 6px 0;
+}
+
+
+/* form */
+
+.form-container {
+    width: 40%;
+    height: 400px;
+    position: absolute;
+    background: rgb(255, 255, 255);
+    /* display: none; */
+    top: 100px;
+    right: 27%;
+    flex-direction: column;
+    padding: 23px 23px;
+    border-radius: 4px;
+    box-shadow: #272727 0px 0px 21px 0px;
+}
+
+.form-inputs {
+    width: 100%;
+    height: 195px;
+    display: flex;
+    flex-direction: column;
+    margin: 11px 0 0 0;
+}
+
+
+.form-heading {
+    font-size: 25px;
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    font-family: sans-serif;
+}
+
+.form-label {
+    font-size: 21px;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    margin: 13px 0 3px 0;
+}
+
+.form-input-btn {
+    width: 80%;
+    height: 26px;
+    padding: 6px 14px;
+    border: 1px solid gray;
+    border-radius: 4px;
+    font-size: 15px;
+
+}
+
+.form-radio {
+    display: flex;
+    width: 42%;
+    justify-content: space-around;
+    height: 34px;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.form-radio-span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-radio-input {
+    margin: 0 6px 0 0;
+}
+
+
+.cancle-btn,
+.add-btn {
+    width: 90px;
+    height: 34px;
+    margin: 0 10px 0 0;
+    border: none;
+    border-radius: 4px;
+    color: black;
+    font-weight: bold;
+    font-size: 14px;
+}
