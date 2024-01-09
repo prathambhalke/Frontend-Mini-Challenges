@@ -31,6 +31,18 @@ function App() {
     setData({ ...data, visible: !data.visible });
   }
 
+  function deleteIncome(index) {
+    const updatedIncome = [...income];
+    updatedIncome.splice(index, 1);
+    setIncome(updatedIncome);
+  }
+
+  function deleteExpense(index) {
+    const updatedExpense = [...expense];
+    updatedExpense.splice(index, 1);
+    setExpense(updatedExpense);
+  }
+
   return (
     <>
       <MyContext.Provider
@@ -44,6 +56,8 @@ function App() {
           setExpense,
           incomeAmount,
           expenseAmount,
+          deleteIncome,
+          deleteExpense,
         }}
       >
         <Navbar />

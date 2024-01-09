@@ -29,10 +29,9 @@
 
 .form-container {
     width: 40%;
-    height: 400px;
+    height: 310px;
     position: absolute;
     background: rgb(255, 255, 255);
-    /* display: none; */
     top: 100px;
     right: 27%;
     flex-direction: column;
@@ -43,7 +42,7 @@
 
 .form-inputs {
     width: 100%;
-    height: 195px;
+    height: 177px;
     display: flex;
     flex-direction: column;
     margin: 11px 0 0 0;
@@ -76,11 +75,12 @@
 
 .form-radio {
     display: flex;
-    width: 42%;
+    width: 50%;
     justify-content: space-around;
     height: 34px;
     font-size: 17px;
     font-weight: bold;
+    margin: 5px 0;
 }
 
 .form-radio-span {
@@ -93,15 +93,113 @@
     margin: 0 6px 0 0;
 }
 
+.income-bg-color{
+    background: #c0f8d3;
+}
 
-.cancle-btn,
+.expense-bg-color{
+    background: #ffa4a4;
+}
+
+.balance-color{
+    color: blue;
+}
+
+.income-color{
+    color: green;
+    background: #c0f8d3;
+}
+
+.expense-color{
+    color: red;
+}
+
+
+
 .add-btn {
-    width: 90px;
+    width: 100%;
     height: 34px;
-    margin: 0 10px 0 0;
     border: none;
     border-radius: 4px;
     color: black;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 17px;
+    background-color: #5f5fff;
+    cursor: pointer;
+
+}
+
+
+
+.cancle-btn {
+    position: relative;
+    top: -3%;
+    left: 96%;
+    cursor: pointer;
+}
+
+
+@media only screen and (max-width: 665px) {
+    .expenseView-component {
+        flex-wrap: wrap;
+        height: min-content;
+
+    }
+
+    .expenseView {
+        width: 90%;
+    }
+
+    .media-screen {
+        font-size: 20px;
+    }
+
+    .tag {
+        font-size: 15px;
+    }
+
+    .form-container {
+        width: 70%;
+        height: 283px;
+        top: 90px;
+        right: 8%;
+    }
+
+    .form-heading {
+        font-size: 19px;
+    }
+
+    .form-inputs {
+        width: 100%;
+        height: 145px;
+    }
+
+    .form-label {
+        font-size: 14px;
+    }
+
+    .form-input-btn {
+        height: 26px;
+        font-size: 15px;
+    }
+
+    .form-radio {
+        width: 94%;
+        height: 34px;
+        margin: 15px 0;
+    }
+
+    .add-btn {
+        width: 100%;
+        height: 50px;
+        background-color: #5f5fff;
+        font-size: 17px;
+    }
+
+    .income, .expense{
+        height: 85px;
+    }
+
+
+
 }

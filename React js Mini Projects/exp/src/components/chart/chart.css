@@ -1,0 +1,23 @@
+.chart-container {
+  width: 50%;
+  height: 70%;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 30px;
+  background-color: lightskyblue;
+  border-radius: 9px;
+}
+
+  @media only screen and (max-width: 665px){
+
+    .chart-container {
+      width: 80%;
+      margin-bottom: 15px;
+      padding: 0 0;
+    }
+  
+  }
+
+ 

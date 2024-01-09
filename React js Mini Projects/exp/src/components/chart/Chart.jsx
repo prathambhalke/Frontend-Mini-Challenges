@@ -7,8 +7,8 @@ const Chart = () => {
 
   return (
     <div className="chart-container">
-      {incomeAmount === 0 ? (
-        "add the Income then we show the calculated Pie chart"
+      {incomeAmount === 0 && expenseAmount === 0 ? (
+        <img src="https://static.thenounproject.com/png/4440902-200.png" alt="" />
       ) : (
         <PieChart
           series={[

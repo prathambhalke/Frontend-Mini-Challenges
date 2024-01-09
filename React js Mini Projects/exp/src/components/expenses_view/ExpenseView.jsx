@@ -2,12 +2,26 @@ import "../expenses_view/expenseView.css";
 import Chart from "../chart/Chart";
 import { MyContext } from "../../context/MyContext";
 import { useContext } from "react";
+import { Close } from "@mui/icons-material";
 
 const ExpenseView = () => {
   const { data, setData, setIncome, setExpense, incomeAmount, expenseAmount } =
     useContext(MyContext);
 
   function onAddExpense() {
+    if (data.description === "") {
+      alert("Please Enter Description");
+      return;
+    }
+    if (data.amount === "") {
+      alert("Please Enter Amount");
+      return;
+    }
+    if (data.type.income === false && data.type.expense === false) {
+      alert("Select Income OR Expense");
+      return;
+    }
+
     if (data.type.income) {
       setIncome((prevIncome) => [...prevIncome, data]);
     }
@@ -21,16 +35,27 @@ const ExpenseView = () => {
   return (
     <div className="expenseView-component">
       <div className="expenseView">
-        <h1>Total Balance {incomeAmount - expenseAmount}</h1>
+        <h1 className="total-balance media-screen ">
+          Total Balance{" "}
+          <span
+            className="balance-color"
+            style={{
+              color: incomeAmount - expenseAmount >= 0 ? "blue" : "red",
+            }}
+          >
+            {" "}
+            ₹ {incomeAmount - expenseAmount}
+          </span>{" "}
+        </h1>
 
-        <div className="income">
-          <h1>{incomeAmount}</h1>
-          <h4>Income</h4>
+        <div className="income income-bg-color">
+          <h1 className="media-screen income-color"> ₹ {incomeAmount}</h1>
+          <h4 className="tag">Income</h4>
         </div>
 
-        <div className="expense">
-          <h1>{expenseAmount}</h1>
-          <h4>Expense</h4>
+        <div className="expense expense-bg-color">
+          <h1 className="media-screen expense-color"> ₹ {expenseAmount}</h1>
+          <h4 className="tag">Expense</h4>
         </div>
       </div>
 
@@ -40,7 +65,17 @@ const ExpenseView = () => {
           className="form-container"
           style={{ display: data.visible ? "flex" : "none" }}
         >
+          <Close
+            className="cancle-btn"
+            type="submit"
+            onClick={() =>
+              setData((prevdata) => {
+                return { ...prevdata, visible: false };
+              })
+            }
+          />
           <h3 className="form-heading">Add New Transaction</h3>
+
           <div className="form-inputs">
             <label htmlFor="Discription" className="form-label">
               Enter Description
@@ -52,7 +87,9 @@ const ExpenseView = () => {
               name="Discription"
               placeholder="Enter  Description"
               onChange={(e) => {
-                setData({ ...data, description: e.target.value });
+                setData((prevdata) => {
+                  return { ...prevdata, description: e.target.value };
+                });
               }}
             />
             <label htmlFor="amount" className="form-label">
@@ -109,18 +146,10 @@ const ExpenseView = () => {
               Expense
             </span>
           </div>
-          <div className="form-submit-btn">
-            <button
-              className="cancle-btn"
-              type="submit"
-              onClick={() => setData({ ...data, visible: false })}
-            >
-              Cancle
-            </button>
-            <button className="add-btn" type="submit" onClick={onAddExpense}>
-              Add
-            </button>
-          </div>
+
+          <button className="add-btn" type="submit" onClick={onAddExpense}>
+            Add
+          </button>
         </div>
       </div>
     </div>
