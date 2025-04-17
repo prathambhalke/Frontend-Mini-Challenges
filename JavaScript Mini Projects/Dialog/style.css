@@ -1,0 +1,69 @@
+:root {
+    --backdrop-opacity: 0.5;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.main-container{
+    text-align:center
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    height: auto;
+    width: 500px;
+    flex-direction: column;
+    margin: auto;
+}
+
+.checkbox-div, #dialogClickBtn {
+    margin-top: 12px;
+}
+
+label {
+    margin-right: 8px;
+}
+
+button {
+    padding: 4px
+}
+
+#dialog {
+    border: 2px solid red;
+    width: max-content;
+    margin: auto;
+}
+
+.dialogHeading {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.para {
+    margin: 18px;
+}
+
+#dialogCloseBtn {
+    position: absolute;
+    right: 11px;
+    bottom: 2px;
+}
+
+dialog {
+    border: none;
+    order: 1px solid gray;
+    box-shadow: 0 0 10px #00000080;
+    max-width: 80%;
+    padding: 0;
+} 
+
+dialog::backdrop {
+    background-color: #000;
+    opacity: var(--backdrop-opacity);
+}

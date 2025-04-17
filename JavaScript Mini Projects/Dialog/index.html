@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dialog</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="main-container">
+        <dialog id="dialog">
+            <section>
+                <header class="dialogHeading">
+                    <h2>Modal Heading</h2>
+                    <button id="dialogCloseIconBtn">X</button>
+                </header>
+                <div class="dialogContent">
+                    <p class="para">This is modal content. You can put any content here. This has a groovy backdrop! You
+                        can
+                        also close this modal by clicking outside of it or pressing the escape key</p>
+                </div>    
+                    <footer>
+                        <button id="dialogCloseBtn">close</button>
+                    </footer>
+            </section>
+        </dialog>
+
+        <div class="container">
+            <div class="checkbox-div">
+                <label for="outClick">Close dialog on outside click</label>
+                <input type="checkbox" checked name="outClick" id="outsideClick">
+            </div>
+
+            <div class="checkbox-div">
+                <label for="ecapeClick">Close dialog on escape</label>
+                <input type="checkbox" checked name="outClick" id="ecapeClick">
+            </div>
+
+            <div class="checkbox-div">
+                <label for="iconClick">Show close icon</label>
+                <input type="checkbox" checked name="outClick" id="iconClick">
+            </div>
+
+            <div class="checkbox-div">
+                <label for="backdropClick">Show backdrop</label>
+                <input type="checkbox" checked name="outClick" id="backdropClick">
+            </div>
+        </div>
+        <button id="dialogClickBtn">Show Dialog</button>
+    </div>
+    </div>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
